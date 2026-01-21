@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Dispatch event to Test_main
+      - name: Trigger Test_main update
         run: |
           curl -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
             https://api.github.com/repos/Cyparta-Software-House/Test_main/dispatches \
-            -d '{"event_type":"submodule-update"}'
+            -d '{"event_type":"update-submodules"}'
